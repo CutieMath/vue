@@ -8,8 +8,9 @@
 <body>
     
     <div id="root">
-        <input type="text" v-model="message">
-        <p>The input message is: {{ message }}.</p>
+        <ul>
+            <li v-for="name in names">{{ name }}</li>
+        </ul>
     </div>
 
     
@@ -18,8 +19,9 @@
 
         new Vue({
             el: "#root",
+            // single source of truth
             data: {
-                message: "Okie"
+                names: ['baby', 'cutie', 'sexy']
             }
         });
 
