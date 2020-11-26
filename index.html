@@ -24,14 +24,17 @@
             // single source of truth
             data: {
                 names: ['baby', 'cutie', 'sexy']
+            },
+            mounted(){
+                document.getElementById('button').addEventListener('click', () => {
+                    let name = document.getElementById('input');
+                    app.names.push(name.value);
+                    name.value = '';
+                });
             }
         });
 
-        document.getElementById('button').addEventListener('click', () => {
-            let name = document.getElementById('input');
-            app.names.push(name.value);
-            name.value = '';
-        });
+        
 
 
 
