@@ -28,8 +28,9 @@
         });
 
         document.getElementById('button').addEventListener('click', () => {
-            let name = document.getElementById('input').value;
-            app.names.push(name);
+            let name = document.getElementById('input');
+            app.names.push(name.value);
+            name.value = '';
         });
 
 
