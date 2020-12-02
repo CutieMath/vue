@@ -4,21 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .pink {
-            color: pink;
-        }
-
-        .isRed {
-            background-color: red;
-        }
-    </style>
 </head>
 <body>
     <div id="root">
-        <h1 :class="className">Baby</h1>
-        <button :title="title" @click="toggleClass" :class="{ 'isRed': isRed }">Hover over me!</button>
-        <button :disabled="isDisabled" @click="toggleDisable">Disable me!</button>
+        <h1>
+            {{ reversedMessage }}
+        </h1>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -26,19 +17,13 @@
         var app = new Vue({
             el: "#root",
             data: {
-                title: "now the title is from JS",
-                className: 'pink',
-                isRed: false,
-                isDisabled: false
+                message: "okie bb"
             },
-            methods: {
-                toggleClass(){
-                    this.isRed = true;
-                },
-                toggleDisable(){
-                    this.isDisabled = true;
-                },
-            }
+            computed: {
+                reversedMessage(){
+                    return this.message.split('').reverse().join('')
+                }
+            },
         });
     </script>
 </body>
