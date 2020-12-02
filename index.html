@@ -9,12 +9,15 @@
     <div id="root">
         <h2>All Tasks</h2>
         <ul>
-            <li v-for="task in tasks" v-text="task.description"></li>
+            <li v-for="task in incompleted">
+                <em v-text="task.description"></em>
+                <button @click="clearTask(task)">x</button>
+            </li>
         </ul>
 
-        <h2>Incompleted Tasks</h2>
+        <h2>Completed Tasks</h2>
         <ul>
-            <li v-for="task in incompleted" v-text="task.description"></li>
+            <li v-for="task in completed" v-text="task.description"></li>
         </ul>
     </div>
 
@@ -24,17 +27,26 @@
             el: "#root",
             data: {
                 tasks: [
-                    {description: 'Baby go to sleep', completed: true},
-                    {description: 'Baby watch performance', completed: true},
+                    {description: 'Baby go to sleep', completed: false},
+                    {description: 'Baby watch performance', completed: false},
                     {description: 'Baby go out running', completed: false},
                     {description: 'Baby drink honey', completed: false},
-                    {description: 'Baby work hard', completed: true}
+                    {description: 'Baby work hard', completed: false}
                 ]
             },
 
             computed: {
                 incompleted(){
                     return this.tasks.filter(task => ! task.completed);
+                },
+                completed(){
+                    return this.tasks.filter(task => task.completed);
+                }
+            },
+
+            methods: {
+                clearTask(task) {
+                    task.completed = true;
                 }
             }
         });
