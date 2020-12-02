@@ -1,19 +1,31 @@
-Vue.component('task-list', {
-    template: '<div><task v-for="task in tasks">{{ task.description }}</task></div>',
-    data(){
-        return {
-            tasks: [
-                { description: 'Being cute', complete: true},
-                { description: 'Being sweet', complete: false},
-                { description: 'Being honey', complete: false},
-                { description: 'Being yummy', complete: true},
-            ]
-        };
-    }
-});
+Vue.component('baby-message', {
+    props: ['title', 'body'],
 
-Vue.component('task', {
-    template: '<li><slot></slot></li>'
+    data() {
+        return {
+            isVisible: true
+        };
+    },
+
+    template: `
+    <div>
+        <article class="message m-5" v-show="isVisible">
+            <div class="message-header">
+            <p>{{ title }}</p>
+            <button @click="hideModal" class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+                {{ body }}
+            </div>
+        </article>
+    </div>
+  `,
+
+  methods: {
+      hideModal(){
+          this.isVisible = false;
+      }
+  }
 });
 
 new Vue({
