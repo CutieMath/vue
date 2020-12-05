@@ -11,7 +11,14 @@
     <div id="root" class="container">
         <baby-message title="Baby" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem."></baby-message>
         <baby-message title="Honey" body="Go to sleep and get up early x"></baby-message>
+        <!-- Bulma modal  -->
+        <baby-modal v-if="showModal" @close="showModal = false">
+            <p>I love you x</p>
+        </baby-modal>
+        <button @click="showModal = true" class="button is-success is-light" >Show x</button>
     </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="main.js"></script>
