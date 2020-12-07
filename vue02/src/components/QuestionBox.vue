@@ -5,12 +5,15 @@
                 {{ currentQuestion.question }}
             </template>
 
-            <hr class="my-4">
-
             <!-- use key to identify each answer  -->
-            <p v-for="(answer, index) in answers" :key="index">
-                {{ answer }}
-            </p>
+            <ul class="list-group">
+                <li class="list-group-item"
+                    v-for="(answer, index) in answers" 
+                    :key="index"
+                >
+                    {{ answer }}
+                </li>
+            </ul>
 
             <div class="mt-5">
                 <b-button variant="light" class="mr-3" href="#">Submit</b-button>
