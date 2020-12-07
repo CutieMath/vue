@@ -7,9 +7,10 @@
 
             <!-- use key to identify each answer  -->
             <ul class="list-group">
-                <li class="list-group-item"
+                <li class="list-group-item hover-pointer"
                     v-for="(answer, index) in answers" 
                     :key="index"
+                    @click="selectAnswer(index)"
                 >
                     {{ answer }}
                 </li>
@@ -29,6 +30,11 @@ export default {
         currentQuestion: Object,
         next: Function
     },
+    data(){
+        return {
+            selectedIndex: null
+        }
+    },
     computed: {
         answers() {
             // make a copy of the array to "answers"
@@ -36,6 +42,18 @@ export default {
             answers.push(this.currentQuestion.correct_answer);
             return answers;
         }
-    }
+    },
+    methods: {
+        selectAnswer(index) {
+            this.selectedIndex = index
+        }
+    },
 }
 </script>
+
+<style>
+    .hover-pointer:hover {
+        cursor: pointer;
+        background-color: #F9E0E3;
+    }
+</style>
