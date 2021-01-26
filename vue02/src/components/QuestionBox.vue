@@ -11,6 +11,7 @@
                     v-for="(answer, index) in answers" 
                     :key="index"
                     @click="selectAnswer(index)"
+                    :class="[selectedIndex === index ? 'selected' : '']"
                 >
                     {{ answer }}
                 </li>
@@ -51,9 +52,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .hover-pointer:hover {
         cursor: pointer;
-        background-color: #F9E0E3;
+        background-color: #eee;
+    }
+
+    .selected {
+        background-color:#9DA0AC;
+    }
+
+    .correct {
+        background-color: #B7CC98;
+    }
+
+    .incorrect {
+        background-color: #D69298;
     }
 </style>
