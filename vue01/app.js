@@ -7,6 +7,7 @@ function add(){
     const listItemEl = document.createElement('li');
     listItemEl.textContent = entered;
     listEl.appendChild(listItemEl);
+    inputEl.value = '';
 }
 
 buttonEl.addEventListener('click', add);
