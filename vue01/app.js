@@ -1,6 +1,6 @@
 // Use Vue
 Vue.createApp({
-    data(){
+    data() {
         // define the user input and structure it
         return {
             goals: [],
@@ -9,11 +9,11 @@ Vue.createApp({
     },
     methods: {
         // add the value from user input
-        addGoal(){
+        addGoal() {
             this.goals.push(this.enteredValue);
             this.enteredValue = '';
-        }
-    }
+        },
+    },
 }).mount('#app');
 
 
