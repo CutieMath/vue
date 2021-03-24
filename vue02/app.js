@@ -1,7 +1,9 @@
 const app = Vue.createApp({
     data() {
         return {
-            goal: 'Establish a habit to learn 2 hours Vue everyday, including weekends.',
+            goalA: 'Establish a habit to learn 2 hours Vue everyday, including weekends.',
+            goalB: 'Solve Proto questions at hand.',
+            goalC: 'Feel comfortable to start my own Vue project.',
             vueLink: 'https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463138#questions/12725120',
         };
     },
@@ -10,12 +12,11 @@ const app = Vue.createApp({
         outputGoal() {
             const randomNumber = Math.random();
             if (randomNumber < 0.5 ) {
-                return 'Solve Proto questions at hand.';
+                return this.goalB;
             } else {
-                return 'Feel comfortable to do my own Vue projects.';
+                return this.goalC;
             }
         }
     }
 });
-
 app.mount('#user-goal');
