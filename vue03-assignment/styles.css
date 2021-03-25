@@ -15,7 +15,7 @@ header {
   margin: 3rem;
   border-radius: 10px;
   padding: 1rem;
-  background-color: #EDABD5;
+  background-color: #CECCE4;
   color: white;
   text-align: center;
 }
@@ -38,7 +38,7 @@ header {
 #assignment p {
   font-size: 1.25rem;
   font-weight: bold;
-  background-color: #EDABD5;
+  background-color: #CECCE4;
   padding: 0.5rem;
   color: white;
   border-radius: 25px;
@@ -51,8 +51,8 @@ header {
 
 #assignment input:focus {
   outline: none;
-  border-color: #EDABD5;
-  background-color: #EDABD5;
+  border-color: #CECCE4;
+  background-color: #CECCE4;
 }
 
 #assignment button {
@@ -68,7 +68,7 @@ header {
 
 #assignment button:hover,
 #assignment button:active {
-  background-color: #B3477D;
-  border-color: #B3477D;
+  background-color: #CECCE4;
+  border-color: #CECCE4;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
