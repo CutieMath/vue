@@ -22,12 +22,19 @@
       <button v-on:click="minus(5)">Minus 5</button>
       <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
+      <hr>
+
+      <br>
       <input 
         type="text" 
         v-on:input="setName($event, 'Ye')" 
         v-on:keydown.enter="confirmInput"
+        v-bind:value="confirmedName"
       >
       <p>Your name: {{ confirmedName }}</p>
+      <button v-on:click="resetInput">Reset Input</button>
+
+      <hr>
       <form v-on:submit.prevent="submitForm">
         <input type="text">
         <button>Add Cutie!</button>
