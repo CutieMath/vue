@@ -27,9 +27,7 @@
       <br>
       <input 
         type="text" 
-        v-on:input="setName($event, 'Ye')" 
-        v-on:keydown.enter="confirmInput"
-        v-bind:value="confirmedName"
+        v-model="confirmedName"
       >
       <p>Your name: {{ confirmedName }}</p>
       <button v-on:click="resetInput">Reset Input</button>
