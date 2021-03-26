@@ -3,16 +3,25 @@ const app = Vue.createApp({
     return {
       counter: 8,
       name: '',
-      confirmedName: ''
+      confirmedName: '',
+      fullname: ''
     };
   },
-  computed: {
-    fullname() {
-      if ( this.confirmedName === '') {
-        return '';
+  watch: {
+    confirmedName(value) {
+      if(value === '') {
+        this.fullname = "";
       }
-      return this.confirmedName + ' ' + 'Cutie';
+      this.fullname = value + " " + "Baby";
     }
+  },
+  computed: {
+    // fullname() {
+    //   if ( this.confirmedName === '') {
+    //     return '';
+    //   }
+    //   return this.confirmedName + ' ' + 'Cutie';
+    // }
   },
   methods: {
     // This function was moved into computed property
