@@ -4,24 +4,16 @@ const app = Vue.createApp({
       counter: 8,
       name: '',
       confirmedName: '',
-      fullname: ''
+      confirmedLastName: ''
     };
   },
-  watch: {
-    confirmedName(value) {
-      if(value === '') {
-        this.fullname = "";
-      }
-      this.fullname = value + " " + "Baby";
-    }
-  },
   computed: {
-    // fullname() {
-    //   if ( this.confirmedName === '') {
-    //     return '';
-    //   }
-    //   return this.confirmedName + ' ' + 'Cutie';
-    // }
+    fullname() {
+      if ( this.confirmedName === '') {
+        return '';
+      } 
+      return this.confirmedName + ' ' + this.confirmedLastName;
+    }
   },
   methods: {
     // This function was moved into computed property
@@ -34,6 +26,7 @@ const app = Vue.createApp({
     // },
     resetInput() {
       this.confirmedName = '';
+      this.confirmedLastName = '';
     },
     confirmInput(){
       this.confirmedName = this.name

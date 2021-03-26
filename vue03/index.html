@@ -25,10 +25,8 @@
       <hr>
 
       <br>
-      <input 
-        type="text" 
-        v-model="confirmedName"
-      >
+      <input type="text" v-model="confirmedName">
+      <input type="text" v-model="confirmedLastName">
       <p>Your name: {{ fullname }}</p>
       <button v-on:click="resetInput">Reset Input</button>
 
