@@ -11,7 +11,7 @@ const app = Vue.createApp({
             } else if (this.number > 37) {
                 return "TOO MUCH!";
             } else {
-                return this.number;
+                return this.number + " You WON! 😍";
             }
         }
     },
