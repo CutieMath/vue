@@ -15,6 +15,13 @@ const app = Vue.createApp({
       return this.confirmedName + ' ' + this.confirmedLastName;
     }
   },
+  watch: {
+    counter(value) {
+      if (value > 30) {
+        this.counter = 0;
+      }
+    }
+  },
   methods: {
     // This function was moved into computed property
     // Because everytime a vue property run, all functions will run again
