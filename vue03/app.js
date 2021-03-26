@@ -15,6 +15,8 @@ const app = Vue.createApp({
     }
   },
   methods: {
+    // This function was moved into computed property
+    // Because everytime a vue property run, all functions will run again
     // outputFullname(){
     //   if ( this.confirmedName === '') {
     //     return '';
