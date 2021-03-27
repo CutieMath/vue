@@ -34,3 +34,8 @@ header {
   margin: 16px;
   border: 2px dashed #ccc;
 }
+
+.active {
+  border-color: #CECCE4;
+  background-color: #FEE1E6;
+}
