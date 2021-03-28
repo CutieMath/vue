@@ -3,22 +3,22 @@ const app = Vue.createApp({
         return {
             userInput: '',
             isVisible: true,
-            userInputStyle: '',
+            customStyle: ''
         }
     },
     computed: {
-        userDeterminedInput() {
-            return { user1: this.userInput === 'user1', user2: this.userInput === 'user2' };
+        userDeterminedClasses() {
+            return { user1: this.userInput === 'user1', user2: this.userInput === 'user2'};
         },
-        visibleClasses(){
-            return {
+        visibilityClasses() {
+            return { 
                 visible: this.isVisible,
                 hidden: !this.isVisible
             }
         }
     },
     methods: {
-        toggleVisible() {
+        toggleVisibility() {
             this.isVisible = !this.isVisible;
         }
     }
