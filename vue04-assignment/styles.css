@@ -15,7 +15,7 @@ header {
   margin: 3rem;
   border-radius: 10px;
   padding: 1rem;
-  background-color: #FFA5B4;
+  background-color: #121F31;
   color: white;
   text-align: center;
 }
@@ -31,14 +31,14 @@ header {
 #assignment h2 {
   font-size: 2rem;
   border-bottom: 4px solid #ccc;
-  color: #FFA5B4;
+  color: #B52912;
   margin: 0 0 1rem 0;
 }
 
 p {
   font-size: 1.25rem;
   font-weight: bold;
-  background-color: #787878;
+  background-color: #354E7C;
   padding: 0.5rem;
   color: #1f1f1f;
   border-radius: 25px;
@@ -51,35 +51,35 @@ p {
 
 #assignment input:focus {
   outline: none;
-  border-color: #979797;
-  background-color: #FFA5B4;
+  border-color: #354E7C;
+  background-color: #D2D2D2;
 }
 
 #assignment button {
   font: inherit;
   cursor: pointer;
-  border: 1px solid #2F2F36;
-  background-color: #2F2F36;
+  border: 1px solid #B52912;
+  background-color: #B52912;
   color: white;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
   border-radius: 30px;
 }
 
 #assignment button:hover,
 #assignment button:active {
-  background-color: #787878;
-  border-color: #787878;
+  background-color: #121F31;
+  border-color: #121F31;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
 
 .user1 {
-  background-color: blue;
+  background-color: #B52912;
   color: white;
 }
 
 .user2 {
-  background-color: purple;
+  background-color: #121F31;
   color: white;
 }
 
