@@ -1,27 +1,24 @@
-const app = Vue.createApp({
+ const app = Vue.createApp({
     data() {
         return {
             userInput: '',
             isVisible: true,
-            customStyle: ''
-        }
+            userInputForStyle: ''
+        };
     },
     computed: {
-        userDeterminedClasses() {
-            return { user1: this.userInput === 'user1', user2: this.userInput === 'user2'};
+        userDefinedClasses() {
+            return { user1: this.userInput === 'user1', user2: this.userInput === 'user2' };
         },
         visibilityClasses() {
-            return { 
-                visible: this.isVisible,
-                hidden: !this.isVisible
-            }
+            return { visible: this.isVisible, hidden: !this.isVisible }; 
         }
     },
     methods: {
-        toggleVisibility() {
+        toggleVisible() {
             this.isVisible = !this.isVisible;
         }
     }
-});
-
-app.mount('#assignment');
+ });    
+ 
+ app.mount('#assignment');
