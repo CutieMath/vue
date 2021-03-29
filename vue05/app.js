@@ -5,6 +5,15 @@ const app = Vue.createApp({
       goals: [] 
     };
   },
+  computed: {
+    goalsCheck() {
+      if(this.goals.length === 0){
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
   methods: {
     addGoal() {
       this.goals.push(this.enteredGoal);
