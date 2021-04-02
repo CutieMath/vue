@@ -24,7 +24,7 @@
       <button @click="addTask">Add Task</button>
       <ul v-if="isVisible">
         <!-- 2) Output the list of tasks here -->
-        <li v-for="(task, index) in tasks">
+        <li v-for="(task, index) in tasks" :key="task">
           <p>{{ index + 1 }} - {{ task }}</p>
         </li>
       </ul>
