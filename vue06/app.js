@@ -8,7 +8,8 @@ const app = Vue.createApp({
     data(){
         return {
             playerHealth: 100,
-            monsterHealth: 100
+            monsterHealth: 100,
+            currentRound: 0,
         };
     },
     computed: {
@@ -17,10 +18,14 @@ const app = Vue.createApp({
         },
         playerBar(){
             return {width: this.playerHealth + '%'}
+        },
+        canUseSpecialAttack(){
+            return this.currentRound % 3 !== 0 || this.currentRound === 0;
         }
     },
     methods: {
         attackMonster(){
+            this.currentRound ++;
             // fomular to get random value between 5 to 12
             const monsterDamage = getRandomValue(5, 15);
             this.monsterHealth -= monsterDamage;
@@ -29,6 +34,12 @@ const app = Vue.createApp({
         attackPlayer(){
             const playerDamage = getRandomValue(5, 15);
             this.playerHealth -= playerDamage;
+        },
+        specialAttackMonster(){
+            this.currentRound ++;
+            const monsterDamage = getRandomValue(10, 25);
+            this.monsterHealth -= monsterDamage;
+            this.attackPlayer();
         }
     }
 });
