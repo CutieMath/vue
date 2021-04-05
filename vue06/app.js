@@ -10,7 +10,8 @@ const app = Vue.createApp({
             playerHealth: 100,
             monsterHealth: 100,
             currentRound: 0,
-            winner: null
+            winner: null,
+            logMessages: []
         };
     },
     watch: {
@@ -47,21 +48,31 @@ const app = Vue.createApp({
         }
     },
     methods: {
+        startNew(){
+            this.currentRound = 0;
+            this.playerHealth = 100;
+            this.monsterHealth = 100;
+            this.winner = null;
+            this.logMessages = [];
+        },
         attackMonster(){
             this.currentRound ++;
             // fomular to get random value between 5 to 12
             const monsterDamage = getRandomValue(5, 15);
             this.monsterHealth -= monsterDamage;
+            this.addLogMessage('Player', 'attack', monsterDamage)
             this.attackPlayer();
         },
         attackPlayer(){
-            const playerDamage = getRandomValue(5, 15);
+            const playerDamage = getRandomValue(8, 15);
             this.playerHealth -= playerDamage;
+            this.addLogMessage('Monster', 'attack', playerDamage)
         },
         specialAttackMonster(){
             this.currentRound ++;
             const monsterDamage = getRandomValue(10, 25);
             this.monsterHealth -= monsterDamage;
+            this.addLogMessage('Player', 'attack', monsterDamage)
             this.attackPlayer();
         },
         healPlayer(){
@@ -72,16 +83,18 @@ const app = Vue.createApp({
             } else {
                 this.playerHealth += healValue;
             }
+            this.addLogMessage('Player', 'heal', healValue)
             this.attackPlayer();
-        },
-        startNew(){
-            this.currentRound = 0;
-            this.playerHealth = 100;
-            this.monsterHealth = 100;
-            this.winner = null;
         },
         surrender(){
             this.winner = 'monster';
+        },
+        addLogMessage(who, what, value){
+            this.logMessages.unshift({
+                actionBy: who, 
+                actionType: what,
+                actionValue: value
+            });
         }
     }
 });
