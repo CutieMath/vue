@@ -21,6 +21,7 @@ const app = Vue.createApp({
     methods: {
         addTask() {
             this.tasks.push(this.enteredTask);
+            this.enteredTask = '';
         },
         toggleVisible() {
             this.isVisible = !this.isVisible;
