@@ -40,7 +40,7 @@
         <h3 v-if="winner == 'player'">You won!</h3>
         <h3 v-else-if="winner == 'monster'">Monster won!</h3>
         <h3 v-else>Both won!</h3>
-        <button>START NEW GAME! 😍</button>
+        <button @click="startNew">START NEW GAME! 😍</button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
