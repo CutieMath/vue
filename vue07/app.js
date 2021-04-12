@@ -34,4 +34,5 @@ const app = Vue.createApp({
     }
 });
 
+app.component('friend-contact', {});
 app.mount('#app');
