@@ -1,7 +1,8 @@
 const app = Vue.createApp({
     data() {
         return {
-            myGoal: "Master Vue and make projects with Vue.",
+            myGoalA: "Master Vue.",
+            myGoalB: "Make APPs use Vue.",
             deepWorkURL: "https://www.youtube.com/watch?v=2ybOJMibAbA&ab_channel=TheArtofImprovement"
         };
     },
@@ -9,9 +10,9 @@ const app = Vue.createApp({
         randomiseGoal() {
             const randomNumber = Math.random();
             if (randomNumber < 0.5) {
-                return "Master Vue";
+                return this.myGoalA;
             } else {
-                return "Implement Deep Work";
+                return this.myGoalB;
             }
         }
     }
