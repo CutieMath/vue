@@ -1,5 +1,5 @@
 const app = Vue.createApp({
-    data(){
+    data() {
         return {
             myName: "Cutie",
             myAge: 30,
@@ -8,7 +8,7 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        randomNumber(){
+        randomNumber() {
             return Math.round(Math.random() * 10);
         }
     }
