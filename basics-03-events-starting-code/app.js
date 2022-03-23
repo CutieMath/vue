@@ -6,13 +6,23 @@ const app = Vue.createApp({
       confirmedName: ""
     };
   },
-  methods: {
-    outputFullName(){
-      if(this.name == ""){
+  computed: {
+    fullName(){
+      console.log("Calling again...");
+      if(this.name === ""){
         return "";
       } 
       return this.name + " " + "Cutie";
-    },
+    }
+  },
+  methods: {
+    // outputFullName(){
+    //   console.log("Calling again...");
+    //   if(this.name === ""){
+    //     return "";
+    //   } 
+    //   return this.name + " " + "Cutie";
+    // },
     submitForm(){
       alert('Submitted!');
     },
