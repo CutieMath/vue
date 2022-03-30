@@ -3,19 +3,29 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: "",
+      fullName: "",
       confirmedName: ""
     };
   },
-  computed: {
-    fullName(){
-      console.log("Calling again...");
-      if(this.name === ""){
-        return "";
-      } 
-      return this.name + " " + "Cutie";
+  watch: {
+    name(value){
+      if(value == ""){
+        this.fullName = '';
+      } else {
+        this.fullName = value + ' ' + 'Cutie';
+      }
     }
   },
-  methods: {
+  // computed: {
+  //   fullName(){
+  //     console.log("Calling again...");
+  //     if(this.name === ""){
+  //       return "";
+  //     } 
+  //     return this.name + " " + "Cutie";
+  //   }
+  // },
+  methods: { // Methods still need to be used for Events binding
     // outputFullName(){
     //   console.log("Calling again...");
     //   if(this.name === ""){
